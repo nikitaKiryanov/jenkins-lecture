@@ -10,12 +10,12 @@ try {
         parallel(
                 hello: {
                     build job: "../hello",
-                            parameters: [booleanParam(name: 'IsUpper', value: true)]
+                            parameters: [booleanParam(name: 'isUpper', value: true)]
                 },
                 person: {
                     build job: "../person",
                             parameters: [string(name: 'person', value: 'Nikita'),
-                                         booleanParam(name: 'IsUpper', value: true)]
+                                         booleanParam(name: 'isUpper', value: true)]
                 }
         )
     }

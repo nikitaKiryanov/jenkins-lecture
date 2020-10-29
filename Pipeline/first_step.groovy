@@ -32,7 +32,7 @@ try {
                 person: {
                     build job: "../person",
                             parameters: [string(name: 'person', value: "${person}"),
-                                         booleanParam(name: 'isUpper', value: "${isUpper«ÛÍ˚˘Ú}")]
+                                         booleanParam(name: 'isUpper', value: "${isUpperPerson}")]
                 }
         )
     }

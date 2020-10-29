@@ -1,4 +1,21 @@
 properties([disableConcurrentBuilds()])
+properties properties: [[
+                                $class: 'ParametersDefinitionProperty',
+                                parameterDefinitions: [
+                                        [ name        : 'person',
+                                          defaultValue: 'Admin',
+                                          description : 'Your name',
+                                          $class      : 'StringParameterDefinition' ],
+                                        [ name        : 'isUpperHello',
+                                          defaultValue: true,
+                                          description : 'Print',
+                                          $class      : 'BooleanParameterDefinition' ],
+                                        [ name        : 'isUpperPerson',
+                                          defaultValue: true,
+                                          description : 'Print',
+                                          $class      : 'BooleanParameterDefinition' ]
+                                ]
+                        ]]
 
 try {
 
@@ -10,12 +27,12 @@ try {
         parallel(
                 hello: {
                     build job: "../hello",
-                            parameters: [booleanParam(name: 'isUpper', value: true)]
+                            parameters: [booleanParam(name: 'isUpper', value: "${isUpperHello}")]
                 },
                 person: {
                     build job: "../person",
-                            parameters: [string(name: 'person', value: 'Nikita'),
-                                         booleanParam(name: 'isUpper', value: true)]
+                            parameters: [string(name: 'person', value: "${person}"),
+                                         booleanParam(name: 'isUpper', value: "${isUpper«ÛÍ˚˘Ú}")]
                 }
         )
     }

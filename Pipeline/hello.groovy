@@ -12,7 +12,8 @@ properties properties: [[
 stage('Print')
         {
             def toprint = "Hello World"
-            if(isUpper){
+            echo "${isUpper}" 
+            if(isUpper==True){
                 echo 'converting parameter to uppercase'
                 toprint = toprint.toUpperCase()
             }

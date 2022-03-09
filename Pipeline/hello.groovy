@@ -14,7 +14,7 @@ stage('Print')
             def toprint = "Hello World" 
             if(isUpper==true){
                 echo 'converting parameter to uppercase'
-                toprint = toprint.toUpperCase()
+                output = toprint.toUpperCase()
             }
-            echo "${toprint}";
+            echo "${output}";
         }

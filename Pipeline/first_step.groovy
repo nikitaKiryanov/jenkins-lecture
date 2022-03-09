@@ -6,11 +6,11 @@ properties properties: [[
                                           defaultValue: 'Admin',
                                           description : 'Your name',
                                           $class      : 'StringParameterDefinition' ],
-                                        [ name        : 'isUpperHello',
+                                        [ name        : 'toUpperHello',
                                           defaultValue: true,
                                           description : 'Print',
                                           $class      : 'BooleanParameterDefinition' ],
-                                        [ name        : 'isUpperPerson',
+                                        [ name        : 'toUpperPerson',
                                           defaultValue: true,
                                           description : 'Print',
                                           $class      : 'BooleanParameterDefinition' ]
@@ -27,12 +27,12 @@ try {
         parallel(
                 hello: {
                     build job: "../Hello",
-                            parameters: [booleanParam(name: 'isUpper', value: "${isUpperHello}")]
+                            parameters: [booleanParam(name: 'toUpper', value: "${toUpperHello}")]
                 },
                 person: {
                     build job: "../Person",
                             parameters: [string(name: 'person', value: "${person}"),
-                                         booleanParam(name: 'isUpper', value: "${isUpperPerson}")]
+                                         booleanParam(name: 'toUpper', value: "${toUpperPerson}")]
                 }
         )
     }

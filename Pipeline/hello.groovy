@@ -1,7 +1,7 @@
 properties properties: [[
                                 $class: 'ParametersDefinitionProperty',
                                 parameterDefinitions: [
-                                        [ name        : 'isUpper',
+                                        [ name        : 'toUpper',
                                           defaultValue: false,
                                           description : 'Print',
                                           $class      : 'BooleanParameterDefinition' ]
@@ -12,8 +12,8 @@ properties properties: [[
 stage('Print')
         {
             def toprint = "Hello World"
-            isUpper = isUpper.toBoolean()
-            if(isUpper){
+            toUpper = toUpper.toBoolean()
+            if(toUpper){
                 echo 'converting parameter to uppercase'
                 toprint = toprint.toUpperCase()
             }

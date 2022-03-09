@@ -26,11 +26,11 @@ try {
     stage("Print") {
         parallel(
                 hello: {
-                    build job: "../Hello",
+                    build job: "./Hello",
                             parameters: [booleanParam(name: 'toUpper', value: "${toUpperHello}")]
                 },
                 person: {
-                    build job: "../Person",
+                    build job: "./Person",
                             parameters: [string(name: 'person', value: "${person}"),
                                          booleanParam(name: 'toUpper', value: "${toUpperPerson}")]
                 }
